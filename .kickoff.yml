@@ -1,0 +1,50 @@
+# This is a configuration file for the kickoff utility
+description: |
+    This is a REST API archetype for RESOURCE type endpoints
+    New endpoint descriptors can be generated from this archetype by the
+    [kickoff](https://github.com/tombenke/kickoff) utility.
+
+welcome: >
+
+    You are generating a RESOURCE type REST API endpoint
+
+postscript: >
+
+    Next steps:
+
+     - Add your endpoint to the config.yml of the REST API project
+
+     - Modify the generated endpoint descriptor and the corresponding fixtures and schemas
+
+     - Run the tests in order to verify the correctness of the new endpoint description
+
+        npm test
+
+questions:
+    - 
+        type: input
+        name: name
+        message: The name of the endpoint
+        default: New Endpoint
+
+    - 
+        type: input
+        name: cName
+        message: The name of the resource
+        default: ResourceName
+
+    -
+        type: input
+        name: description
+        message: The short description of the endpoint
+        default: This is a REST API endpoint
+
+    -
+        type: input
+        name: uriTemplate
+        message: The complete URI pattern of the endpoint
+        default: /new-endpoint
+
+converters:
+    handlebars:
+        - service.yml
